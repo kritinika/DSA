@@ -1,12 +1,20 @@
 class Solution {
 public:
-    bool validMountainArray(vector<int>& arr){
-        int n=arr.size();
-        if(n<=2||arr[0]>arr[1])return false;
-        int i=0,j=n-1;
-        while(i<n&&arr[i]<arr[i+1])i++;
-        while(j>0&&arr[j-1]>arr[j])j--;
-        return i>0&&i==j&&j<n-1;
+   bool validMountainArray(vector<int>& arr) {
+        int hill = 0, valley = 0;
+        int size = arr.size();
         
+        for (int i = 1; i < size - 1; i++) {
+            
+            if (arr[i - 1] == arr[i] || arr[i] == arr[i + 1])
+                return false;
+            
+            if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1])
+                hill++;
+            if (arr[i - 1] > arr[i] && arr[i] < arr[i + 1])
+                valley++;
+        }
+        
+        return hill == 1 and valley == 0;
     }
 };
