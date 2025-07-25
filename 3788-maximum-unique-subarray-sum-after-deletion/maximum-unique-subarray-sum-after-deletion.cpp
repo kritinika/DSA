@@ -4,13 +4,13 @@ public:
         unordered_set<int>arr;
         int sum=0;
         int maxneg =INT_MIN;
-        for(auto it:nums){
+        for(auto &it:nums){
             if(it<=0)maxneg=max(maxneg,it);
-            else{
+            else
                 if(!arr.count(it)){
                     sum+=it;
                     arr.insert(it);
-                }
+                
             }
 
         }
