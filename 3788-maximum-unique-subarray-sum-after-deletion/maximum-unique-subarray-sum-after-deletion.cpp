@@ -8,8 +8,8 @@ public:
             if(it<=0)maxneg=max(maxneg,it);
             else{
                 if(!arr.count(it)){
-                    arr.insert(it);
                     sum+=it;
+                    arr.insert(it);
                 }
             }
 
