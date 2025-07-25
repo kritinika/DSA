@@ -6,7 +6,7 @@ public:
         int maxneg =INT_MIN;
         for(auto &it:nums){
             if(it<=0)maxneg=max(maxneg,it);
-            else if(!arr.count(it)){ sum+=it;
+            else if(arr.find(it)==arr.end()){ sum+=it;
                     arr.insert(it);    
             }
 
