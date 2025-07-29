@@ -5,10 +5,8 @@ public:
         int ele;
         int val=0;
         for(int i=0;i<n;i++){
-            if(val==0){
-                val++;
-                ele=nums[i];continue;
-            }
+            if(val==0)
+                ele=nums[i];
             if(nums[i]==ele)val++;
             else val--;
         }
