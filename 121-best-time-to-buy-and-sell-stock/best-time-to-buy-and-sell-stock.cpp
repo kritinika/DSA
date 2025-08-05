@@ -3,9 +3,7 @@ public:
     int maxProfit(vector<int>& nums){
         int profit =0;int bestbuy =nums[0];
         for(int i=1;i<nums.size();i++){
-            if(nums[i]>nums[i-1]){
-            profit =max(profit,nums[i]-bestbuy);
-            }
+    profit =max(profit,nums[i]-bestbuy);
             bestbuy =min(bestbuy ,nums[i]);
         }
 return profit;
