@@ -5,7 +5,7 @@ public:
         sort(nums1.begin(),nums1.end());
         int n=nums1.size();
         if(n&1)return (double)nums1[n/2];
-        return (double)(nums1[n/2-1]+nums1[n/2])/2;
+        return ((double)nums1[n/2-1]+(double)nums1[n/2])/2;
         
     }
 };
