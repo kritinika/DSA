@@ -6,10 +6,10 @@ public:
         nums.clear();
         int i=0;
         while(i<3){
-            if(k[i]>0){nums.push_back(i);k[i]--;}
-            else{
+            while(k[i]>0){nums.push_back(i);k[i]--;}
+            
                 i++;
-            }
+        
         }
      
         
