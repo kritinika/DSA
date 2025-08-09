@@ -10,7 +10,6 @@ public:
             if(h[i]<h[j])i++;
             else j--;
         }
-        ans=max(ans,maxii_h*w);
         return ans;
     }
 };
