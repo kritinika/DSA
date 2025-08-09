@@ -5,8 +5,7 @@ public:
         for(auto it:nums)st.insert(it);
         int i=0;
         for(auto it:st){
-            nums[i]=it;
-            i++;
+            nums[i++]=it;
         }
     }
 };
