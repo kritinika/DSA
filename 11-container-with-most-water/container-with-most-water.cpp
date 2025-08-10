@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maxArea(vector<int>& h) {
-        int w,l,area=0;
+        int w=0,l=0,area=0;
         int i=0,j=h.size()-1;
         while(i<j){
             l=min(h[i],h[j]);
