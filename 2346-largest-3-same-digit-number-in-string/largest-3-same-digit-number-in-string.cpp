@@ -8,6 +8,7 @@ public:
             if(ans=="")ans=num.substr(i,3);
             else ans=max(ans,num.substr(i,3));
         }
+        if(num[i+1]!=num[i+2])i++;
        }
        return ans;
     }
