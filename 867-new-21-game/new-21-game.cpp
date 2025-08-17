@@ -1,6 +1,6 @@
 class Solution {
 public:
-    double new21Game(int n, int k, int maxPts){
+    static double new21Game(int n, int k, int maxPts){
            if (k==0 || n>=k+maxPts-1) return 1;// edge case
         vector<double> dp(n+1, 0);
         dp[0]=1;
