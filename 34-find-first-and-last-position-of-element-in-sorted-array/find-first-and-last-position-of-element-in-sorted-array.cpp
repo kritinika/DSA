@@ -1,49 +1,42 @@
 class Solution {
 public:
+int first(vector<int>nums,int target){
+    int n =nums.size();
+        int start =0,end =n-1;
+        while(start<=end){
+             int mid =start+(end-start)/2;
+             if(mid==0&&nums[mid]==target)return mid;
+             if(nums[mid]==target&&nums[mid-1]<nums[mid])return mid;
+            if(nums[mid]==target&&nums[mid-1]==target)end=mid-1;
+            else if(target>nums[mid])start=mid+1;
+            else end=mid-1;
+        }
+return -1;
+}
+int second(vector<int>nums,int target){
+    int n =nums.size();
+    int start =0,end =n-1;
+    while(start<=end){
+        int mid =start+(end-start)/2;
+             if(mid==n-1&&nums[mid]==target)return mid;
+             if(nums[mid]==target&&nums[mid+1]>target)return mid;
+             if(nums[mid]==target&&nums[mid+1]==target)start=mid+1;
+              else if(target>nums[mid])start=mid+1;
+              else end =mid-1;
+    }
+return -1;
+}
     vector<int> searchRange(vector<int>& nums, int target) {
-        int n=nums.size();
-        int s=-1,e=-1;
-        //starting
-        int i=0,j=n-1;
-        while(i<=j){
-            int mid=i+(j-i)/2;
-            if(nums[mid]==target){
-                if(mid==0){
-                    s=mid;
-                    break;
-                }
-                if(nums[mid-1]<nums[mid]){
-                    s=mid;
-                    break;
-                }
-                else if (nums[mid-1]==nums[mid]){
-                    j=mid-1;
-                }
-            }
-            else if(nums[mid]>target)j=mid-1;
-            else i=mid+1;
-        }
-        //end
-        i=0,j=n-1;
-         while(i<=j){
-            int mid=i+(j-i)/2;
-            if(nums[mid]==target){
-                if(mid==n-1){
-                    e=mid;
-                    break;
-                }
-                else if(nums[mid+1]>nums[mid]){
-                    e=mid;
-                    break;
-                }
-                else {
-                    i=mid+1;
-                }
-            }
-            if(nums[mid]>target)j=mid-1;
-            if(nums[mid]<target) i=mid+1;
-        }
-        return {s,e};
+        vector<int>arr;
+        int a=first(nums,target);
+        int b=second(nums,target);
+    arr.push_back(a);
+    arr.push_back(b);
 
+    return arr;
+
+
+    
+        
     }
 };
