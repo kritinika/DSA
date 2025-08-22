@@ -12,11 +12,11 @@ public:
                     s=mid;
                     break;
                 }
-                else if(nums[mid-1]<nums[mid]){
+                if(nums[mid-1]<nums[mid]){
                     s=mid;
                     break;
                 }
-                else if(nums[mid-1]==nums[mid]){
+                else if (nums[mid-1]==nums[mid]){
                     j=mid-1;
                 }
             }
@@ -36,7 +36,7 @@ public:
                     e=mid;
                     break;
                 }
-                else if(nums[mid+1]==nums[mid]){
+                else {
                     i=mid+1;
                 }
             }
