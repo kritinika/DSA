@@ -41,7 +41,7 @@ public:
                 }
             }
             if(nums[mid]>target)j=mid-1;
-            else i=mid+1;
+            if(nums[mid]<target) i=mid+1;
         }
         return {s,e};
 
