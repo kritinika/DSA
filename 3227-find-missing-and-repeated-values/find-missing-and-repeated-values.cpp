@@ -1,17 +1,28 @@
 class Solution {
 public:
-    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
-        int n=grid.size();
-        int b=0,a=0;
-        vector<int>check(n*n+1,0);
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid){
+        int n =grid.size(); int l =n*n;
+        unordered_map<int ,int>mp;
+        int fir =0,sec=0;
         for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-          check[grid[i][j]]++;
-          if(check[grid[i][j]]==2)a=grid[i][j];
-        }}
+            for(int j=0;j<n;j++){
+                mp[grid[i][j]]++;
+            }
+        }
+        int xorr=0;
+        int p=1;
+    for(auto&[a,b]:mp){
+        if(b==2){
+            fir=a;
+            xorr^=p;
+            p++;
+        }
+            xorr^=a;
+            xorr^=p;
+            p++;
+    }
 
-    for(int i=0;i<check.size();i++)if(check[i]==0)b=i;
-    return {a,b};
+return {fir,xorr};
         
-}
+    }
 };
